@@ -54,7 +54,39 @@
 						<div class="inner">
 							<h1>Actually An Ordered Map</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>I was recently tasked with an assignment of sorts to prove my programming prowess.</p>
+							<p>I was recently tasked with an assignment of sorts to prove my programming prowess.
+<pre><code>You have the option to use one of the following languages: Ruby, Python, JavaScript, Go, Java, C++.
+In a separate file, create a class (or it's equivalent in the language you chose).  The class should contain
+the following method.
+
+Letter Counting
+
+Create a method that accepts a string as a param, and returns an ordered array, hash, dictionary (depending on language).
+The method will return each unique letter (case-insensitive) the string contains in order from most
+frequent to least frequent. eg. if the input string is 'foo bar baz', the return for a ruby method should be:
+{a=>2, b=>2, o=>2, f=>1, r=>1, z=>1}.
+
+The detail of the return method will vary based on language but should maintain the order and count of each letter.
+</code></pre>
+								I chose the language that I expected to be programming in if I got the job, Go.
+							</p>
+
+<pre><code>#!/usr/local/bin/php
+&lt;?=json_encode(letter_counting(array_slice($argv, 1)))?>
+
+&lt;? function letter_counting($words){
+	foreach($words as $word){
+		foreach(str_split(strtolower($word)) as $_){
+			$counts[$_] += 1;
+		}
+	}
+	array_multisort($counts, SORT_DESC, array_keys($counts));
+	return $counts;
+}
+</code></pre>
+
+							<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Sometimes, the elegant implementation is just a function.  Not a method.  Not a class.  Not a framework.  Just a function.</p>&mdash; John Carmack (@ID_AA_Carmack) <a href="https://twitter.com/ID_AA_Carmack/status/53512300451201024">March 31, 2011</a></blockquote>
+							<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 						</div>
 					</div>
 
